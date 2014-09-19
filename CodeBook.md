@@ -3,7 +3,7 @@
 <br/>
 
 ## Feature Selection  
-#### (reference: Text in this section taken verbatim from the 'features_info.txt' file that comes with the dataset)
+#### (reference: Text in this section was taken verbatim from the 'features_info.txt' file that comes with the dataset)
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.  
 
@@ -81,10 +81,27 @@ The README.txt provided with this dataset explains the experiments done to produ
 
 <br/>
 
-## Transformations done & Summaries calculated (along with units)
+## Transformations Done & Summaries Calculated
 
-<br/>
+The following transformations were done to the original dataset in the process of creating the tidy dataset:  
 
-## Other relevant information
+- The training and test datasets were concatenated together using 'rbind'. All concatenations put the training set first and test set second in the argument list. Three sets of files underwent this procedure: X_train.txt / X_test.txt, y_train.txt / y_test.txt, & subject_train.txt / subject_test.txt.  
+
+- When determining which features to keep, a simple grep command was used to find all features that had either 'mean' or 'std' in their names (as they are given in the 'features.txt' file). This resulted in a total of 79 out of 561 numeric features being kept in the final dataset.  
+
+- All numeric features' names were kept as-is from the 'features.txt' file, so that the columns choosen could be compared directly with the raw data as given. No (potential) typos, or spelling errors were corrected for. Due to the highly technical nature of the data and the limited understanding of what each variable represents, more meaningful names were not choosen. 
+
+- The descriptive activity names were taken from the list given in the 'activity_labels.txt' file, and they were not manipulated in anyway. The column containing these values was named "activityLabels", and this column was bound to the concetenated dataset using 'cbind'.  
+
+- The subject identifiers were transformed into factors, and then this transformed column (labeled "dataSubjectFactor") was concetenated to the dataset using 'cbind'.  
+
+
+When the analysis code completes, 3 datasets are left loaded in the environment (all other interim objects are removed as part of the analysis code execution):  
+
+* 'dataSet' : the dataset that resulted from concatenating X_train.txt and X_test.txt, with columns renamed based on the 'features.txt' file. The original number of observations has not changed.  
+
+* 'miniDS' : the dataset that contains the limited number of columns we want - dataSubjectFactor, activityLabels, and 79 numeric features that are either mean or standard deviation calculations. Again, the original number of observations has not changed.  
+
+* 'tidyDS' : the final "tidy" dataset that contains the same number of columns as 'miniDS', but each numeric column now contains the average of that variable, grouped by activity and subject. The calculations done leave a total of 180 observations (30 subjects * 6 activities = 180 grouped observations). This is the dataset that is written out to file ('TidyDataSet.txt') at the very end of the analysis code.  
 
 <br/>

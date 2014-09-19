@@ -1,7 +1,7 @@
 # Analysis of the 'Human Activity Recognition Using Smartphones' Dataset   
 <br/>  
   
-## DATA
+## Data
   
 The data used for this analysis represents data collected from the accelerometers of the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
 
@@ -37,7 +37,7 @@ The raw data used to create the feature set is also included in the zip file (un
 
 <br/>  
    
-## ANALYSIS OVERVIEW  
+## Analysis Overview  
 
 The analysis performed here was done as part of the course requirements of 'Getting and Cleaning Data' (https://class.coursera.org/getdata-007), a course offered via Coursera.
 
@@ -53,7 +53,7 @@ The following files exist in this Github repository to fulfill this requirement:
 
 <br/>  
    
-## ANALYSIS  
+## Analysis  
 
 In order to replicate the analysis and it's results, the following assumptions have been made:  
 
@@ -72,7 +72,7 @@ The analysis code provided does the following:
 - Merges the training and test sets into a single dataset.  
 - Extracts the features that are related to the mean and standard deviation for each measurement. The original data contains 561 features with time and frequency domain variables, 79 of these are either mean or standard deviation related features.  
 - Gives descriptive activity names to the activities in the data set. There are a total of six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).  
-- Gives descriptive variable names to all the columns of the data set.  
+- Gives descriptive variable names to all the columns of the data set. The descriptive names are taken as-is from the features.txt file provided with the dataset. 
 - Creates a tidy dataset with the average of each variable, for each activity and each subject.  
 - Writes the tidy dataset to a file named 'TidyDataSet.txt' in the working directory.  
   
