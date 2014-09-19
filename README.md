@@ -47,9 +47,11 @@ The following files exist in this Github repository to fulfill this requirement:
 
 - 'README.md' : this file which explains how all of the scripts work and how they are connected.
 
-- 'run_analysis.R': an R script for performing the analysis. The output of which is a text file ('TidyDataSet.txt') which contains the resultant tidy dataset of the analysis.
+- 'CodeBook.md' : a code book that describes the variables, the data, and any transformations or work that was performed to clean up the data.  
 
-- 'CodeBook.md' : a code book that describes the variables, the data, and any transformations or work that was performed to clean up the data.
+- 'run_analysis.R': an R script for performing the analysis. The output of which is a text file ('TidyDataSet.txt') which contains the resultant tidy dataset of the analysis.  
+
+- 'TidyDataSet.txt': sample output of the analysis code.  
 
 <br/>  
    
