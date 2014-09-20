@@ -89,7 +89,7 @@ The following transformations were done to the original dataset in the process o
 
 - When determining which features to keep, a simple grep command was used to find all features that had either 'mean' or 'std' in their names (as they are given in the 'features.txt' file). This resulted in a total of 79 out of 561 numeric features being kept in the final dataset.  
 
-- All numeric features' names were kept as-is from the 'features.txt' file, so that the columns choosen could be compared directly with the raw data as given. No (potential) typos, or spelling errors were corrected for. Due to the highly technical nature of the data and the limited understanding of what each variable represents, more meaningful names were not choosen. 
+- All numeric features' names were kept as-is from the 'features.txt' file, so that the columns choosen could be compared directly with the raw data as given. No (potential) typos, or spelling errors were corrected for. Due to the highly technical nature of the data and my limited understanding of what each variable represents, more meaningful names were not choosen. 
 
 - The descriptive activity names were taken from the list given in the 'activity_labels.txt' file, and they were not manipulated in anyway. The column containing these values was named "activityLabels", and this column was bound to the concetenated dataset using 'cbind'.  
 
@@ -100,7 +100,7 @@ When the analysis code completes, 3 datasets are left loaded in the environment 
 
 * 'dataSet' : the dataset that resulted from concatenating X_train.txt and X_test.txt, with columns renamed based on the 'features.txt' file. The original number of observations has not changed.  
 
-* 'miniDS' : the dataset that contains the limited number of columns we want - dataSubjectFactor, activityLabels, and 79 numeric features that are either mean or standard deviation calculations. Again, the original number of observations has not changed.  
+* 'miniDS' : the smaller dataset that contains the limited number of columns we want - dataSubjectFactor, activityLabels, and 79 numeric features that are either mean or standard deviation calculations. Again, the original number of observations has not changed.  
 
 * 'tidyDS' : the final "tidy" dataset that contains the same number of columns as 'miniDS', but each numeric column now contains the average of that variable, grouped by activity and subject. The calculations done leave a total of 180 observations (30 subjects * 6 activities = 180 grouped observations). This is the dataset that is written out to file ('TidyDataSet.txt') at the very end of the analysis code.  
 

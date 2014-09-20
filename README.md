@@ -70,7 +70,7 @@ The analysis is run by executing the code from an R console within the working d
   
 The analysis code provided does the following:  
 
-- It reads in all the data files named in the 'DATA' section above.  
+- It reads in all the data files named in the 'Data' section above.  
 - Merges the training and test sets into a single dataset.  
 - Extracts the features that are related to the mean and standard deviation for each measurement. The original data contains 561 features with time and frequency domain variables, 79 of these are either mean or standard deviation related features.  
 - Gives descriptive activity names to the activities in the data set. There are a total of six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).  
