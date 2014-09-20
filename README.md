@@ -62,10 +62,18 @@ In order to replicate the analysis and it's results, the following assumptions h
 - You have a recent version of R installed (minimum version 3.1.0)  
 - You have the following packages installed: plyr, dplyr.  
 - The working directory contains the analysis code ('run_analysis.R') from this repository + the data folder ('UCI HAR Dataset') which results from downloading and unzipping the data file named above (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Do not modify the folder hierarchy within this data folder.  
+
+
+The diagram below is a visual depiction of how all the data files provided in the zip file relate to one another. The dataset has no ID numbers, so the implicit order of rows is used to piece the data together.  
+    ![alt text](HowTheDataFilesFitTogether.png "How The Data Files Fit Together")  
+This diagram was taken from the following site:  
+    https://class.coursera.org/getdata-007/forum/thread?thread_id=49   
   
   
 The analysis is run by executing the code from an R console within the working directory. For example:  
-  `source('~/MyWorkingDirectory/run_analysis.R')`  
+  ```R  
+  source('~/MyWorkingDirectory/run_analysis.R')  
+  ```  
   
   
 The analysis code provided does the following:  
@@ -82,10 +90,18 @@ The analysis code provided does the following:
 The tidy dataset that results from this analysis will have 180 observations (30 subjects * 6 activities = 180 grouped observations) & 81 variables (subject identifier + activity label + 79 features related to mean and standard deviation).
   
   
-Characteristics of the output file ('TidyDataSet.txt') are:  
+Characteristics of the output file ('TidyDataSet.txt') include:  
 
 - It does *not* include row names  
 - It does include column names  
 - The column separator is a tab  
+
+
+The output file is created using the write.table command. To view the output in R, the following commands can be used (these should be executed in the working directory which contains the generated 'TidyDataSet.txt' file, otherwise you will have to put the full file-path name into the command):       
+  ```R  
+  testoutput <- read.table("TidyDataSet.txt", header = TRUE)  
+  View(testoutput)  
+  ```  
+A sample of the output file ('TidyDataSet.txt') is provided in this repository with the R analysis code, in case you don't want to run the analysis yourself to generate the file.  
   
 <br/>   
